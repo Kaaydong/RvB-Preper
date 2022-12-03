@@ -35,3 +35,14 @@ sudo mv wordpress/* /var/www/html/
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 sudo mysql -u root -p
+
+cd /var/www/html/
+sudo mv wp-config-sample.php wp-config.php
+sudo rm -rf index.html
+sudo nano wp-config.php
+cd
+
+sudo systemctl restart apache2.service
+sudo systemctl restart mysql.service
+
+echo "DON'T FORGET TO FINISH THE FIREWALL UWU"
